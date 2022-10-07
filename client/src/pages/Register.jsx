@@ -151,7 +151,7 @@ export default function Register() {
           </div>
           {drawSpecAttr()}
           <div className="w-full flex justify-end">
-            <button className="px-5 py-2 rounded-md bg-yellow-700 w-fit hover:bg-yellow-500">
+            <button className="px-5 py-2 rounded-md bg-gray-700 w-fit hover:bg-gray-900">
               Register
             </button>
           </div>
