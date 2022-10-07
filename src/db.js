@@ -1,8 +1,8 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const ExtraProp = require("./models/extraProp");
-const dbURI = require("./config");
 mongoose
-  .connect(dbURI, {
+  .connect(process.env.dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

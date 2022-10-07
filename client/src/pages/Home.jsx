@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getAllCategories } from "../api/category.api";
-import { getProducts } from "../api/product.api";
+import { getAllCategories } from "../api/category";
+import { getProducts } from "../api/product";
 import { NavLink } from "react-router-dom";
 
 export default function Home() {
