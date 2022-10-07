@@ -1,7 +1,6 @@
 const Product = require("../models/product");
 
 exports.getProductList = (req, res) => {
-  console.log(req.query);
   if (req.query.category_id == 0) {
     Product.find().exec((err, data) => {
       if (err) {
@@ -20,14 +19,13 @@ exports.getProductList = (req, res) => {
 };
 
 exports.addProduct = (req, res) => {
-  console.log(req.body);
   const data = req.body;
   const product = new Product({
     name: data.name,
     SKU: data.sku,
     brand: data.brand,
     cost: data.cost,
-    category: data.category,
+    extraProp: data.category,
     specific: data.spec,
   });
   product.save(function (err, product) {

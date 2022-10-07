@@ -7,7 +7,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Successfully connect to MongoDB.");
+    console.log("Connected to Database");
     ExtraProp.init();
   })
   .catch((err) => {

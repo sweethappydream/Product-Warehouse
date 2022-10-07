@@ -2,64 +2,6 @@ import { useEffect, useState } from "react"
 import { getAllCategories } from "../api/category.api";
 import { addProduct } from "../api/product.api";
 
-// category data structure is following.
-// const categories = [
-//   {
-//     "spec": [
-//       {
-//         "spec1": {
-//           "Screen type": [
-//             "LED",
-//             "LCD",
-//             "OLED"
-//           ]
-//         }
-//       },
-//       {
-//         "spec2": "Screen size"
-//       }
-//     ],
-//     "_id": "63382f259857d031dc9a2ac9",
-//     "name": "TV",
-//     "__v": 0
-//   },
-//   {
-//     "spec": [
-//       {
-//         "spec1": {
-//           "Processor": [
-//             "Intel",
-//             "AMD"
-//           ]
-//         }
-//       },
-//       {
-//         "spec2": "Ram Memory"
-//       }
-//     ],
-//     "_id": "63382f259857d031dc9a2aca",
-//     "name": "Laptops",
-//     "__v": 0
-//   },
-//   {
-//     "spec": [
-//       {
-//         "spec1": {
-//           "Material": [
-//             "Leather",
-//             "Plastic"
-//           ]
-//         }
-//       },
-//       {
-//         "spec2": "Number/Size"
-//       }
-//     ],
-//     "_id": "63382f259857d031dc9a2acb",
-//     "name": "Shoes",
-//     "__v": 0
-//   }
-// ]
 export default function Register() {
   const [categories, setCategories] = useState([]);
   const [specAttr, setSpecAttr] = useState([]);
@@ -88,7 +30,7 @@ export default function Register() {
   }
   const register = (e) => {
     e.preventDefault();
-    const submitData = { ...data, spec: { ...spec } }
+    const submitData = { ...data, spec: { ...spec } };
     addProduct(submitData).then(result => {
       alert(result.data.message);
     }).catch((err) => {
@@ -105,7 +47,7 @@ export default function Register() {
     const getCategories = async () => {
       const retData = await getAllCategories();
       setCategories(retData);
-      setData({ ...data, category: retData[0].name })
+      setData({ ...data, category: retData[0]._id })
       setSpecAttr(retData[0].spec);
     }
     getCategories();
@@ -145,7 +87,7 @@ export default function Register() {
   }
   return (
     <div className="flex w-full h-full items-center justify-center">
-      <div className="w-2/4 p-6 justify-around h-fit rounded-xl bg-card shadow-sm hover:shadow-slate-700 text-white">
+      <div className="w-2/4 p-6 justify-around h-fit rounded-xl bg-gray-500 bg-card shadow-sm text-white">
         <form onSubmit={register}>
           <div className="flex items-center justify-between my-4">
             Category:

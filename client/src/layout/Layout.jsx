@@ -9,7 +9,7 @@ const Layout = () => {
         <div className="flex-grow-0 ">
           <Navbar />
         </div>
-        <div className="flex-grow overflow-auto">
+        <div className="flex-grow overflow-auto px-20 py-28">
           <Outlet />
         </div>
       </div>

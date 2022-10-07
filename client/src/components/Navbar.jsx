@@ -1,19 +1,15 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
-import Button from "./buttons/Button"
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="flex w-full h-14  text-white bg-card justify-between items-center">
-      <div className="font-bold mx-3 mr-3 text-[22px]">Product Warehouse</div>
-      <div className="flex">
-        <NavLink to="register">
-          <Button content={'Register'}></Button>
-        </NavLink>
-        <NavLink to="/products">
-          <Button content={'Product List'}></Button>
-        </NavLink>
-      </div>
-    </div >
-  )
+    <div className="flex w-full h-14 bg-slate-900 text-white bg-card justify-between items-center">
+      <div className="font-bold mx-3 mr-3 text-[32px]">Product Warehouse</div>
+      <NavLink to="/home">
+        <div className="w-fit px-3 mx-3 py-1 cursor-pointer font-normal text-[22px] hover:text-sky-500">
+          Home
+        </div>
+      </NavLink>
+    </div>
+  );
 }

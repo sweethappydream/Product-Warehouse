@@ -7,8 +7,7 @@ module.exports = {
         default: '1px'
       },
       backgroundColor: {
-        card: '#172238',
-        mainBack: '#263b63'
+        mainBack: '#AAAAAA'
       }
     },
   },

@@ -14,7 +14,7 @@ const ExtraProp = mongoose.model("ExtraProp", ExtraPropSchema);
 
 ExtraProp.init = async () => {
   await ExtraProp.deleteMany({}, function () {
-    console.log("extraProps table is initialized");
+    console.log("table is initialized");
   });
   const extraProp1 = new ExtraProp({
     name: "TV",
