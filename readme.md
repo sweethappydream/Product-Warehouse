@@ -137,7 +137,7 @@ To run the test suite, first install the dependencies, then run `npm test`:
 
 ```console
 $ npm install
-$ npm test
+$ npm te
 ```
 
 
